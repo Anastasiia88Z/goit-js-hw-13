@@ -1,6 +1,7 @@
-
-const refs = {
+export default function getRefs() {
+  return {
   photoContainer: document.querySelector('.gallery'),
-  searchForm: document.querySelector('.search-form'),
+  searchForm: document.getElementById('search-form'),
   loadMoreBtn: document.querySelector('.load-more'),
+ };
 }
