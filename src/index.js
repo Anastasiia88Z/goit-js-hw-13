@@ -1,26 +1,30 @@
+import articlesTpl from './templates/photo-card.hbs'
 import './sass/main.scss';
 
-import ApiFetchFotos from './js/fetchFotos.js';
+import NewsApiFetchFotos from './js/fetchFotos.js';
 
 
-const apiFetchFotos = ApiFetchFotos();
+const newsApiFetchFotos =  new NewsApiFetchFotos();
 
+console.log(newsApiFetchFotos);
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 
-let searchQuery = '';
 
-function onSearch(arguments) {
+function onSearch(e) {
   e.preventDefault();
 
-  searchQuery = e.currentTarget.elements.query.value;
-
-  apiFetchFotos.fetchArticles(searchQuery);
+  newsApiFetchFotos.query = e.currentTarget.elements.query.value;
+  newsApiFetchFotos.resetPage();
+  newsApiFetchFotos.fetchArticles().then(articles => console.log(articles));
 }
 
 function onLoadMore () {
-  apiFetchFotos.fetchArticles(searchQuery);
+  newsApiFetchFotos.fetchArticles().then(articles => console.log(articles));
 }
-
+ function appendArticlesMarkup(articles) {
+   refs.articlesContainer.insertAdjacentHTML('beforeend', articlesTpl
+   (articles))
+ }
 
