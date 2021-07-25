@@ -14,9 +14,9 @@ const url = `${BASE_URL}?key=${API_KEY}&q=${this.searchQuery}&image_type=photo&s
 
 return fetch(url)
    .then(response => response.json())
-   .then(({ articles }) => {
+   .then(({ hits }) => {
         this.incrementPage();
-        return articles;
+        return hits;
   });
 };
 

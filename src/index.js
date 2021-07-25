@@ -33,9 +33,9 @@ function onSearch(e) {
   }
 
   newsApiFetchFotos.resetPage();
-  newsApiFetchFotos.fetchArticles().then(articles => {
+  newsApiFetchFotos.fetchArticles().then(hits => {
     clearArticlesContainer();
-    appendArticlesMarkup(articles);
+    appendArticlesMarkup(hits);
 
   });
 }
@@ -44,8 +44,8 @@ function onLoadMore () {
   newsApiFetchFotos.fetchArticles().then(appendArticlesMarkup);
 }
 
- function appendArticlesMarkup(articles) {
-   refs.photoContainer.insertAdjacentHTML('beforeend', articlesTpl(articles))
+ function appendArticlesMarkup(hits) {
+   refs.photoContainer.insertAdjacentHTML('beforeend', articlesTpl(hits))
  }
 
  function clearArticlesContainer() {
