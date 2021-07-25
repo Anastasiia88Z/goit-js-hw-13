@@ -18,7 +18,7 @@ const refs = getRefs();
 const newsApiFetchFotos =  new NewsApiFetchFotos();
 
 refs.searchForm.addEventListener('submit', onSearch);
-// refs.loadMoreBtn.addEventListener('click', onLoadMore);
+refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 
 
@@ -40,9 +40,9 @@ function onSearch(e) {
   });
 }
 
-// function onLoadMore () {
-//   newsApiFetchFotos.fetchArticles().then(appendArticlesMarkup);
-// }
+function onLoadMore () {
+  newsApiFetchFotos.fetchArticles().then(appendArticlesMarkup);
+}
 
  function appendArticlesMarkup(articles) {
    refs.photoContainer.insertAdjacentHTML('beforeend', articlesTpl(articles))
