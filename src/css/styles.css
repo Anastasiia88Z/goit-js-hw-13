@@ -4,7 +4,7 @@
   padding: 30px;
   margin-bottom: 0px;
   margin-left: 0px;
-  background-color: rgb(65, 65, 206);
+  background-color: rgb(77, 206, 65);
 }
 
 .searchBtn {
@@ -12,7 +12,11 @@
   justify-content: center;
   margin-left: 20px;
   margin-right: auto;
-  background-color: rgb(142, 202, 204);
+  background-color: hsl(54, 94%, 54%);
+}
+
+.button {
+  background-color: hsl(54, 94%, 54%);
 }
 
 input {
@@ -22,10 +26,11 @@ input {
 .btn {
   display: flex;
   justify-content: center;
-  background-color: rgb(142, 202, 204);
+  background-color: hsl(54, 94%, 54%);
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .btn.is-hidden {
   display: none;
@@ -43,3 +48,5 @@ input {
 .photo-card {
   margin-left: 20px;
 }
+
+
