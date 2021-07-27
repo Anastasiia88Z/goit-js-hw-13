@@ -5,6 +5,7 @@ import getRefs from './js/get-refs.js';
 import NewsApiFetchFotos from './js/fetchFotos.js';
 import Notiflix from "notiflix";
 
+
 const refs = getRefs();
 
 const newsApiFetchFotos =  new NewsApiFetchFotos();
