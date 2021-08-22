@@ -4,7 +4,10 @@ import getRefs from './js/get-refs.js';
 
 import NewsApiFetchFotos from './js/fetchFotos.js';
 import Notiflix from "notiflix";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/src/simple-lightbox.scss';
 
+const gallery = new SimpleLightbox('.photo-card a');
 
 const refs = getRefs();
 
@@ -31,6 +34,8 @@ async function onSearch(evt) {
 const result = await newsApiFetchFotos.fetchArticles();
 
 appendArticlesMarkup(result.hits);
+
+    gallery.refresh()
 
 if (result.hits.length === 0) {
   refs.loadMoreBtn.classList.add('hidden');
